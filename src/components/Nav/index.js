@@ -33,7 +33,7 @@ function Nav(props) {
                     </li>
                     {categories.map((category) => (
                         <li className={`mx-1 ${
-                            currentCategory.name === category.name && 'navActive'
+                            currentCategory.name === category.name && !contactSelected && 'navActive'
                         }`} key={category.name}>
                         <span onClick={() => {
                             setCurrentCategory(category)

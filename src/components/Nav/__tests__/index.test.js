@@ -8,14 +8,18 @@ const categories = [
 ]
 const mockCurrentCategory = jest.fn();
 const mockSetCurrentCategory = jest.fn();
+const mockContactSelected = jest.fn();
+const mockSetContactSelected = jest.fn();
 
 describe('Nav component', () => {
     // baseline test
     it('renders', () => {
         render(<Nav 
             categories={categories}
-            setCurrentCategory={mockCurrentCategory}
+            setCurrentCategory={mockSetCurrentCategory}
             currentCategory={mockCurrentCategory}
+            contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected}
         />);
     });
 
@@ -23,8 +27,10 @@ describe('Nav component', () => {
     it('matches snapshot', () => {
         const { asFragment } = render(<Nav 
             categories={categories}
-            setCurrentCategory={mockCurrentCategory}
+            setCurrentCategory={mockSetCurrentCategory}
             currentCategory={mockCurrentCategory}
+            contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected}
         />);
 
         expect(asFragment()).toMatchSnapshot();
@@ -36,8 +42,10 @@ describe('emoji is visibile', () => {
         // Arrange
         const { getByLabelText } = render(<Nav 
             categories={categories}
-            setCurrentCategory={mockCurrentCategory}
+            setCurrentCategory={mockSetCurrentCategory}
             currentCategory={mockCurrentCategory}
+            contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected}
         />);
 
         // Assert
@@ -50,8 +58,10 @@ describe('links are visible', () => {
         // Arrange
         const { getByTestId } = render(<Nav 
             categories={categories}
-            setCurrentCategory={mockCurrentCategory}
+            setCurrentCategory={mockSetCurrentCategory}
             currentCategory={mockCurrentCategory}
+            contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected}
         />);
 
         // Assert
